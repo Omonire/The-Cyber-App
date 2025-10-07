@@ -8,3 +8,4 @@ gunicorn
 pytest
 pytest-mock
 schedule
+psycopg2-binary

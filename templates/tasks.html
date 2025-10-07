@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Daily Task - Zero Trace CyberHub{% endblock %}
+
+{% block content %}
+<style>
+    .task-container {
+        background-color: var(--secondary-bg);
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+    }
+    .task-container h1 {
+        font-size: 2rem;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+    }
+    .task-text {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+</style>
+
+<div class="task-container">
+    <h1>Your Daily Cybersecurity Task</h1>
+    <p class="task-text">{{ task }}</p>
+
+    {% if not all_tasks_completed %}
+        <form action="{{ url_for('complete_task') }}" method="POST">
+            <input type="hidden" name="task_text" value="{{ task }}">
+            <button type="submit" class="btn btn-primary">Mark as Complete</button>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

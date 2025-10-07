@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}Payment Instructions - Zero Trace CyberHub{% endblock %}
+
+{% block content %}
+<style>
+    .payment-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: var(--secondary-bg);
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+    }
+    .payment-container h1 {
+        text-align: center;
+        color: var(--accent-color);
+        margin-bottom: 20px;
+    }
+    .payment-details {
+        margin-top: 30px;
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+    }
+    .payment-details h2 {
+        color: var(--accent-color);
+    }
+    .payment-details p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    .whatsapp-numbers {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="payment-container">
+    <h1>Manual Payment Instructions</h1>
+    <p>You have selected the <strong>{{ plan }}</strong> plan for <strong>{{ plan_info.price }}</strong>.</p>
+    <p>To complete your subscription, please follow the steps below.</p>
+
+    <div class="payment-details">
+        <h2>Step 1: Bank Transfer</h2>
+        <p>Please transfer the exact amount to the following bank account:</p>
+        <ul>
+            <li><strong>Bank Name:</strong> Zenith Bank</li>
+            <li><strong>Account Name:</strong> Omonire Israel</li>
+            <li><strong>Account Number:</strong> 2009412217</li>
+        </ul>
+
+        <h2 style="margin-top: 30px;">Step 2: Send Receipt</h2>
+        <p>After making the payment, please send a screenshot of your receipt to one of the following WhatsApp numbers for verification:</p>
+        <ul class="whatsapp-numbers">
+            <li>+234 812 222 9591</li>
+            <li>+234 803 850 4765</li>
+        </ul>
+
+        <p style="margin-top: 20px;">Your account will be upgraded to the <strong>{{ plan }}</strong> plan as soon as your payment is confirmed. This process is manual, so please allow some time for verification.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

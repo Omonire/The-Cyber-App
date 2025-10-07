@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}Home - Zero Trace CyberHub{% endblock %}
+
+{% block content %}
+<style>
+    .hero {
+        text-align: center;
+        padding: 80px 0;
+        background-color: var(--secondary-bg);
+        border-radius: 10px;
+        margin-bottom: 40px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--accent-color);
+    }
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .feature-card {
+        background-color: var(--secondary-bg);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid var(--border-color);
+    }
+    .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--accent-color);
+    }
+</style>
+
+<section class="hero">
+    <h1>Defend. Detect. Educate.</h1>
+    <p>Empowering users to learn, test, and practice cybersecurity awareness safely and ethically.</p>
+    <a href="/register" class="btn btn-primary">Get Started</a>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>Cybersecurity News</h3>
+        <p>Stay updated with the latest threats and trends with our integrated RSS feed.</p>
+    </div>
+    <div class="feature-card">
+        <h3>AI Cyber Assistant</h3>
+        <p>Get ethical guidance and explanations from our AI trained on cybersecurity principles.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Security Tools</h3>
+        <p>Access a suite of free and premium tools to analyze and improve your security posture.</p>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}Pricing - Zero Trace CyberHub{% endblock %}
+
+{% block content %}
+<style>
+    .pricing-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .pricing-header h1 {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+        margin-bottom: 10px;
+    }
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .pricing-card {
+        background-color: var(--secondary-bg);
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .pricing-card h2 {
+        font-size: 1.8rem;
+        color: var(--accent-color);
+        margin-bottom: 15px;
+    }
+    .pricing-card .price {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .pricing-card .price span {
+        font-size: 1rem;
+        font-weight: normal;
+        color: var(--text-color);
+    }
+    .pricing-card ul {
+        margin-bottom: 30px;
+        text-align: left;
+        flex-grow: 1;
+    }
+    .pricing-card ul li {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="pricing-header">
+    <h1>Subscription Plans</h1>
+    <p>Choose the plan that's right for you.</p>
+</div>
+
+<div class="pricing-grid">
+    <div class="pricing-card">
+        <h2>Starter</h2>
+        <div class="price">₦0 <span>/ month</span></div>
+        <ul>
+            <li>Access to all free tools</li>
+            <li>Daily cybersecurity tasks</li>
+            <li>Latest news and blog articles</li>
+        </ul>
+        {% if not g.user %}
+            <a href="{{ url_for('register') }}" class="btn btn-secondary">Get Started</a>
+        {% else %}
+            <a href="#" class="btn btn-secondary" style="cursor: not-allowed; opacity: 0.6;">Current Plan</a>
+        {% endif %}
+    </div>
+
+    <div class="pricing-card">
+        <h2>Basic</h2>
+        <div class="price">₦10,000 <span>/ month</span></div>
+        <ul>
+            <li>All Starter features</li>
+            <li>Access to 4 premium tools</li>
+            <li>Full access to the Cyber AI Assistant</li>
+        </ul>
+        {% if g.user %}
+            <a href="{{ url_for('payment_instructions', plan='Basic') }}" class="btn btn-primary">Choose Basic</a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="btn btn-primary">Choose Basic</a>
+        {% endif %}
+    </div>
+
+    <div class="pricing-card">
+        <h2>Pro</h2>
+        <div class="price">₦25,000 <span>/ month</span></div>
+        <ul>
+            <li>All Basic features</li>
+            <li>Access to all 10 premium tools</li>
+            <li>Unlimited AI Assistant usage</li>
+        </ul>
+        {% if g.user %}
+             <a href="{{ url_for('payment_instructions', plan='Pro') }}" class="btn btn-secondary">Choose Pro</a>
+        {% else %}
+            <a href="{{ url_for('register') }}" class="btn btn-secondary">Choose Pro</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Dependencies
+/jules-scratch/
+/node_modules/
+/build/
+/dist/
+
+# OS-specific
+.DS_Store
+Thumbs.db

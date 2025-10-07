@@ -1,0 +1,10 @@
+Flask
+python-dotenv
+Flask-SQLAlchemy
+SQLAlchemy
+bcrypt
+feedparser
+gunicorn
+pytest
+pytest-mock
+schedule

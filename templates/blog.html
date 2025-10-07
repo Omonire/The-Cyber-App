@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Blog - Zero Trace CyberHub{% endblock %}
+
+{% block content %}
+<style>
+    .feed-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .feed-item {
+        background-color: var(--secondary-bg);
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+    }
+    .feed-item h2 {
+        margin-top: 0;
+        font-size: 1.5rem;
+    }
+    .feed-item h2 a {
+        color: var(--accent-color);
+    }
+    .feed-item p {
+        margin-bottom: 10px;
+    }
+    .feed-item .summary {
+        margin-bottom: 20px;
+    }
+    .feed-item .meta {
+        font-size: 0.9rem;
+        color: #888;
+    }
+</style>
+
+<h1>Latest Blog Posts</h1>
+<div class="feed-container">
+    {% for post in posts %}
+        <div class="feed-item">
+            <h2><a href="{{ post.link }}" target="_blank" rel="noopener noreferrer">{{ post.title }}</a></h2>
+            <p class="meta">Published: {{ post.published }}</p>
+            <div class="summary">
+                {{ post.summary | safe }}
+            </div>
+            <a href="{{ post.link }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Read More</a>
+        </div>
+    {% else %}
+        <p>No blog posts found. Please try again later.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}Terms of Service - Zero Trace CyberHub{% endblock %}
+
+{% block content %}
+<style>
+    .legal-container {
+        background-color: var(--secondary-bg);
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+    }
+    .legal-container h1 {
+        color: var(--accent-color);
+        margin-bottom: 20px;
+    }
+    .legal-container h2 {
+        color: var(--accent-color);
+        margin-top: 30px;
+    }
+    .legal-container p, .legal-container li {
+        line-height: 1.8;
+    }
+</style>
+
+<div class="legal-container">
+    <h1>Terms of Service for Zero Trace CyberHub</h1>
+    <p><em>Last updated: October 26, 2025</em></p>
+
+    <h2>1. Introduction</h2>
+    <p>Welcome to Zero Trace CyberHub ("Company", "we", "our", "us")! These Terms of Service ("Terms", "Terms of Service") govern your use of our website located at [Your Website URL] (together or individually "Service") operated by Zero Trace CyberHub.</p>
+    <p>Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. Please read it here: <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>.</p>
+
+    <h2>2. Accounts</h2>
+    <p>When you create an account with us, you guarantee that you are above the age of 18, and that the information you provide us is accurate, complete, and current at all times. Inaccurate, incomplete, or obsolete information may result in the immediate termination of your account on Service.</p>
+    <p>You are responsible for maintaining the confidentiality of your account and password, including but not limited to the restriction of access to your computer and/or account. You agree to accept responsibility for any and all activities or actions that occur under your account and/or password.</p>
+
+    <h2>3. Prohibited Uses</h2>
+    <p>You may use Service only for lawful and ethical purposes and in accordance with Terms. You agree not to use Service:</p>
+    <ul>
+        <li>In any way that violates any applicable national or international law or regulation.</li>
+        <li>For the purpose of exploiting, harming, or attempting to exploit or harm minors in any way by exposing them to inappropriate content or otherwise.</li>
+        <li>To engage in any conduct that is unauthorized, unethical, or malicious, including scanning, testing, or attacking any system or network without explicit, prior authorization.</li>
+        <li>To impersonate or attempt to impersonate Company, a Company employee, another user, or any other person or entity.</li>
+    </ul>
+
+    <h2>4. Intellectual Property</h2>
+    <p>Service and its original content (excluding Content provided by users), features and functionality are and will remain the exclusive property of Zero Trace CyberHub and its licensors. Service is protected by copyright, trademark, and other laws of and foreign countries.</p>
+
+    <h2>5. Termination</h2>
+    <p>We may terminate or suspend your account and bar access to Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of Terms.</p>
+    <p>If you wish to terminate your account, you may simply discontinue using Service.</p>
+
+    <h2>6. Limitation Of Liability</h2>
+    <p>IN NO EVENT SHALL ZERO TRACE CYBERHUB, NOR ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES, BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE SERVICE.</p>
+
+    <h2>7. Governing Law</h2>
+    <p>These Terms shall be governed and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law provisions.</p>
+
+    <h2>8. Changes To Service</h2>
+    <p>We reserve the right to withdraw or amend our Service, and any service or material we provide via Service, in our sole discretion without notice. We will not be liable if for any reason all or any part of Service is unavailable at any time or for any period.</p>
+
+    <h2>Contact Us</h2>
+    <p>Please send your feedback, comments, requests for technical support by the contact form on our website.</p>
+</div>
+{% endblock %}
